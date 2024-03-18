@@ -15,12 +15,14 @@
   "lint-staged": {
     "src/**/*": [
       "pnpm run lint",
+      "pnpm run lint:css",
       "pnpm run format"
     ]
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
