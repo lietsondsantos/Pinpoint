@@ -14,9 +14,9 @@ const Window = ({ title, children }: PropTypes) => {
         <p className='head__title'>{title}</p>
 
         <ul className='head__list'>
-          <li className='list__circle' />
-          <li className='list__circle' />
-          <li className='list__circle list__circle--active' />
+          <li className='list__item' />
+          <li className='list__item' />
+          <li className='list__item list__item--contrast' />
         </ul>
       </div>
 
