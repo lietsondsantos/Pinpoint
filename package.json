@@ -19,10 +19,12 @@
     ]
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@phosphor-icons/react": "^2.0.15",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.1",
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
@@ -50,6 +52,7 @@
     "path": "^0.12.7",
     "prettier": "^3.2.5",
     "typescript": "^5.4.2",
-    "vite": "^5.1.6"
+    "vite": "^5.1.6",
+    "zod": "^3.22.4"
   }
 }

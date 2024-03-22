@@ -1,36 +1,54 @@
-import { useState } from 'react'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
 
 import { MagnifyingGlass } from '@phosphor-icons/react'
 
-import { Wrapper } from './styles'
+import { Warning, Wrapper } from './styles'
+
+const schemaValidation = z.object({
+  search: z
+    .string()
+    .regex(
+      /^([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/,
+      'Invalid IP address',
+    ),
+})
+
+type schemaType = z.infer<typeof schemaValidation>
 
 const SearchField = () => {
-  const [inputValue, setInputValue] = useState<string>('')
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<schemaType>({ resolver: zodResolver(schemaValidation) })
 
-  const handleSearchAnIP = () => {
-    console.log(inputValue)
+  const handleSearchAnIP = (data: schemaType) => {
+    console.log(data)
   }
 
   return (
     <Wrapper>
-      <input
-        className='searchField'
-        type='text'
-        name='search'
-        id='search'
-        placeholder='0.0.0.0'
-        value={inputValue}
-        onChange={e => setInputValue(String(e.target.value))}
-      />
+      <form onSubmit={handleSubmit(handleSearchAnIP)}>
+        <input
+          type='text'
+          id='search'
+          placeholder='0.0.0.0'
+          className='searchField'
+          {...register('search')}
+        />
 
-      <button
-        type='button'
-        className='btn'
-        title='Search'
-        onClick={() => handleSearchAnIP()}
-      >
-        <MagnifyingGlass size={32} className='btn__icon' />
-      </button>
+        <button type='submit' className='btn' title='Search'>
+          <MagnifyingGlass size={32} className='btn__icon' />
+        </button>
+      </form>
+
+      {errors.search != null && (
+        <Warning>
+          <p className='warning__text'>{errors.search?.message}</p>
+        </Warning>
+      )}
     </Wrapper>
   )
 }

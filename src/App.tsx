@@ -14,7 +14,7 @@ const App = () => {
       </div>
 
       <Container>
-        <div>
+        <div className='leftSide__wrapper'>
           <Window title='IP_Information'>
             <InformationPanel />
           </Window>
