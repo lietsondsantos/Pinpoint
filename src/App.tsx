@@ -1,4 +1,4 @@
-import { InformationPanel, Window } from '@/components'
+import { InformationPanel, Map, Window } from '@/components'
 import { Container, Wrapper } from '@/styles/pages/Home'
 
 const App = () => {
@@ -16,6 +16,10 @@ const App = () => {
       <Container>
         <Window title='IP_Information'>
           <InformationPanel />
+        </Window>
+
+        <Window title='Map'>
+          <Map lat={-8.838333} lng={13.234444} ip={'0.0.0.0'} />
         </Window>
       </Container>
     </Wrapper>
