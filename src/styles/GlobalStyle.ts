@@ -21,8 +21,8 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-fontSmoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${({ theme }) => theme.colors.grey[900]};
-    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.gray[900]};
+    background-color: ${({ theme }) => theme.colors.gray[50]};
   }
 `
 
