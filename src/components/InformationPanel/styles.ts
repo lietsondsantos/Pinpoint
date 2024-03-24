@@ -1,13 +1,10 @@
-import { styled } from 'styled-components'
+import Styled from 'styled-components'
 
-export const Wrapper = styled.main`
+export const Wrapper = Styled.main`
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 1rem 1rem 1rem 2.5rem;
-
-  .list {
-    .list__item {
-    }
-  }
+  font-size: 1.1rem;
+  line-height: 2.1rem;
+  padding: 0.5rem 1rem 1rem 2rem;
 `
