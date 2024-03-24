@@ -30,7 +30,7 @@ const Map = ({ lat, lng, ip }: PropTypes) => {
     return () => {
       map.remove()
     }
-  }, [])
+  }, [ip])
 
   return (
     <Wrapper>

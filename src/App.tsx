@@ -1,7 +1,24 @@
-import { InformationPanel, Map, Window, SearchField } from '@/components'
+import { useQuery } from '@tanstack/react-query'
+import { useState } from 'react'
+
+import { InformationPanel, Map, SearchField, Window } from '@/components'
+import { api } from '@/services'
 import { Container, Wrapper } from '@/styles/pages/Home'
 
 const App = () => {
+  const [ipAddress, setIpAddress] = useState('0.0.0.0')
+
+  const { data, isError, isLoading } = useQuery({
+    queryKey: ['ipData', ipAddress],
+    queryFn: async () => await api.checkTheEndPoint(ipAddress),
+  })
+
+  if (isError) console.log('Houve algum erro: ', isError)
+
+  if (data === undefined || isLoading) {
+    return <p>Carregando...</p>
+  }
+
   return (
     <Wrapper>
       <div className='top'>
@@ -16,14 +33,18 @@ const App = () => {
       <Container>
         <div className='leftSide__wrapper'>
           <Window title='IP_Information'>
-            <InformationPanel />
+            <InformationPanel data={data} />
           </Window>
 
-          <SearchField />
+          <SearchField get={ipAddress} set={setIpAddress} />
         </div>
 
         <Window title='Map'>
-          <Map lat={-8.838333} lng={13.234444} ip={'0.0.0.0'} />
+          <Map
+            lat={data.latitude.toFixed(6)}
+            lng={data.longitude.toFixed(6)}
+            ip={data.ip}
+          />
         </Window>
       </Container>
     </Wrapper>
