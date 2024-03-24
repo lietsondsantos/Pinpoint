@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import * as React from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
@@ -17,7 +18,12 @@ const schemaValidation = z.object({
 
 type schemaType = z.infer<typeof schemaValidation>
 
-const SearchField = () => {
+type PropTypes = {
+  get: string
+  set: React.Dispatch<React.SetStateAction<string>>
+}
+
+const SearchField = ({ get, set }: PropTypes) => {
   const {
     register,
     handleSubmit,
@@ -25,7 +31,7 @@ const SearchField = () => {
   } = useForm<schemaType>({ resolver: zodResolver(schemaValidation) })
 
   const handleSearchAnIP = (data: schemaType) => {
-    console.log(data)
+    set(String(data.search))
   }
 
   return (
@@ -34,7 +40,7 @@ const SearchField = () => {
         <input
           type='text'
           id='search'
-          placeholder='0.0.0.0'
+          placeholder={get}
           className='searchField'
           {...register('search')}
         />
