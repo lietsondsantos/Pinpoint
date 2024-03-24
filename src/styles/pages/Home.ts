@@ -1,6 +1,6 @@
-import { styled } from 'styled-components'
+import Styled from 'styled-components'
 
-export const Wrapper = styled.main`
+export const Wrapper = Styled.main`
   width: max-content;
   height: max-content;
   display: flex;
@@ -23,7 +23,7 @@ export const Wrapper = styled.main`
   }
 `
 
-export const Container = styled.div`
+export const Container = Styled.div`
   width: max-content;
   height: max-content;
   display: flex;
