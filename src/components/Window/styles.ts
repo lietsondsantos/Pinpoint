@@ -1,6 +1,10 @@
 import Styled from 'styled-components'
 
-export const Wrapper = Styled.div`
+type PropTypes = {
+  title: string
+}
+
+export const Wrapper = Styled.div<PropTypes>`
   width: 30rem;
   height: 22rem;
   border: 2px solid ${({ theme }) => theme.colors.gray[900]};
@@ -40,6 +44,6 @@ export const Wrapper = Styled.div`
   .context {
     width: 100%;
     height: 90%;
-    overflow: hidden;
+    overflow: ${({ title }) => (title !== 'map' ? 'scroll;' : 'hidden')};
   }
 `

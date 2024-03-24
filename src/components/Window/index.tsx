@@ -9,7 +9,7 @@ type PropTypes = {
 
 const Window = ({ title, children }: PropTypes) => {
   return (
-    <Wrapper>
+    <Wrapper title={title}>
       <div className='head'>
         <p className='head__title'>{title}</p>
 
