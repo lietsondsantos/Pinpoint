@@ -1,14 +1,14 @@
-<center style="margin-bottom: 2rem">
-  <img src="./public/logo.png" alt="Project Logo" width="150" style="margin-bottom: 1rem" />
+<div align="center" style="margin-bottom: 2rem">
+  <img src="./public/logo.png" alt="Project Logo" width="150" style="margin-bottom: 0.5rem" />
   <h1>Pinpoint</h1>
-</center>
+</div>
 
-<center style="margin-bottom: 4rem">
+<div align="center" style="margin-bottom: 5rem">
   <img src="https://img.shields.io/badge/Version-1.0.0-brightgreen" alt="version" />
   <img src="https://img.shields.io/github/last-commit/lietsondsantos/Pinpoint" alt="last-communit" />&nbsp;&nbsp;
   <img src="https://img.shields.io/github/issues/lietsondsantos/Pinpoint" alt="issues" />&nbsp;&nbsp;
   <img src="https://img.shields.io/badge/license-MIT-brightgreen" alt="license" />
-</center>
+</div>
 
 ## Getting Started
 
@@ -55,4 +55,3 @@ To run the project in your local environment, follow these steps:
 2. Run `pnpm i` in the project directory to install the required dependencies.
 3. Run `pnpm run dev` to get the project started.
 4. Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console) in your web browser to view the app.
-
