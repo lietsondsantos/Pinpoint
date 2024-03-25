@@ -1,4 +1,4 @@
-import { FormatResponseData } from '@/util'
+import { FormatResponseData } from '@/utils'
 import { Wrapper } from './styles'
 
 type PropTypes = {
