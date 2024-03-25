@@ -1,30 +1,58 @@
-# React + TypeScript + Vite
+<center style="margin-bottom: 2rem">
+  <img src="./public/logo.png" alt="Project Logo" width="150" style="margin-bottom: 1rem" />
+  <h1>Pinpoint</h1>
+</center>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<center style="margin-bottom: 4rem">
+  <img src="https://img.shields.io/badge/Version-1.0.0-brightgreen" alt="version" />
+  <img src="https://img.shields.io/github/last-commit/lietsondsantos/Pinpoint" alt="last-communit" />&nbsp;&nbsp;
+  <img src="https://img.shields.io/github/issues/lietsondsantos/Pinpoint" alt="issues" />&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/license-MIT-brightgreen" alt="license" />
+</center>
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pinpoint is an IP address tracking website integrating with a geolocation map in which the user can see in real time where the searched IP address is located, the user has the possibility of searching for any public IP address. For security reasons, the data presented on the map is not 100% accurate in order to avoid constraints.
 
-## Expanding the ESLint configuration
+## :package: Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- `Vite`
+- `React.js`
+- `TypeScript`
+- `@tanstack/react-query`
+- `Axios`
+- `Zod`
+- `Leaflet`
+- `React-hook-form`
+- `Styled-Components`
+- `Eslint`
+- `Prettier`
+- `Husky`
 
-- Configure the top-level `parserOptions` property like this:
+## :file_folder: Folder structure
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```
+.
+├── src               # 
+|   ├── utils         # Contains all modules that provide generic utility functionality.
+|   ├── styles        # Contains all global styles of the application including color tokens etc...
+|   ├── services      # Contains all modules to retrieve data from external APIs, such as RESTful or GraphQL APIs.
+|   ├── components    # Contains all page components
+|   └── @types        # Contains all type definitions for third-party libraries or frameworks.
+|
+├── public            # Contains all static files that will be served directly by the web server.
+|
+└── .husky            # Contains configuration files that define which Git hooks will be used and what scripts they should execute.
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## :flight_departure: Running the Project
+
+To run the project in your local environment, follow these steps:
+
+> :warning: **Warning:** Before running the project make sure to add your IPDATA API key to the .env file (.env.example).
+
+1. Clone the repository to your local machine.
+2. Run `pnpm i` in the project directory to install the required dependencies.
+3. Run `pnpm run dev` to get the project started.
+4. Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console) in your web browser to view the app.
+
