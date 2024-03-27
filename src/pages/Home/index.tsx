@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { InformationPanel, Map, SearchField, Window } from '@/components'
 import { useTheme } from '@/contexts'
 import { api } from '@/services'
-import { Container, Loading, Wrapper } from '@/styles/pages/Home'
+import { Container, Loading, Wrapper } from './styles'
 
 const Home = () => {
   const [ipAddress, setIpAddress] = useState('0.0.0.0')
