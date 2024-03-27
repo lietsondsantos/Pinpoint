@@ -38,12 +38,24 @@ const App = () => {
   return (
     <Wrapper>
       <div className='top'>
-        <h1 className='top__title'>Pinpoint</h1>
+        <div className='top__leftSide'>
+          <h1 className='leftSide__title'>Pinpoint</h1>
 
-        <h2 className='top__description'>
-          Online tool that allows you to track and identify the origin of an IP
-          address.
-        </h2>
+          <h2 className='leftSide__description'>
+            Online tool that allows you to track and identify the origin of an
+            IP address.
+          </h2>
+        </div>
+
+        <div className='top__rightSide'>
+          <select
+            name='theme'
+            className='rightSide__select rightSide__select--theme'
+          >
+            <option value='light'>Light</option>
+            <option value='dark'>Dark</option>
+          </select>
+        </div>
       </div>
 
       <Container>
