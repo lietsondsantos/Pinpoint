@@ -4,9 +4,12 @@ import { useState } from 'react'
 import { InformationPanel, Map, SearchField, Window } from '@/components'
 import { api } from '@/services'
 import { Container, Loading, Wrapper } from '@/styles/pages/Home'
+import { useTheme } from '@/contexts'
 
 const App = () => {
   const [ipAddress, setIpAddress] = useState('0.0.0.0')
+
+  const setTheme = useTheme(state => state.setTheme)
 
   const { data, isError, isLoading } = useQuery({
     queryKey: ['ipData', ipAddress],
@@ -51,6 +54,7 @@ const App = () => {
           <select
             name='theme'
             className='rightSide__select rightSide__select--theme'
+            onChange={e => setTheme(e.target.value)}
           >
             <option value='light'>Light</option>
             <option value='dark'>Dark</option>
