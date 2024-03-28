@@ -37,6 +37,8 @@ Pinpoint is an IP address tracking website integrating with a geolocation map in
 |   ├── utils         # Contains all modules that provide generic utility functionality.
 |   ├── styles        # Contains all global styles of the application including color tokens etc...
 |   ├── services      # Contains all modules to retrieve data from external APIs, such as RESTful or GraphQL APIs.
+|   ├── pages         # Contains all Application pages (As this application is a single page application, there will only be one page)
+|   ├── contexts      # Contains all information will be shared globally
 |   ├── components    # Contains all page components
 |   └── @types        # Contains all type definitions for third-party libraries or frameworks.
 |
