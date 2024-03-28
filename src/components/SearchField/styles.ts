@@ -21,6 +21,8 @@ export const Wrapper = Styled.div`
       font-size: 1rem;
       padding: 1rem;
       border: none;
+      color: ${({ theme }) => theme.colors.gray[900]};
+      background-color: ${({ theme }) => theme.colors.gray[50]};
     }
 
     .btn {
@@ -34,7 +36,9 @@ export const Wrapper = Styled.div`
       border-left: 2px solid ${({ theme }) => theme.colors.gray[900]};
       background-color: transparent;
 
-      .btn__icon { }
+      .btn__icon {
+        color: ${({ theme }) => theme.colors.gray[900]}
+      }
     }
   }
 `
